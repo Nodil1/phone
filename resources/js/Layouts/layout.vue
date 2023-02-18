@@ -10,6 +10,7 @@ export default {
 </script>
 
 <template>
+    <div></div>
     <div class="header">
         <v-card
             class="mx-auto"

@@ -8,6 +8,7 @@ export default defineComponent({
 </script>
 
 <template>
+    <div></div>
     <layout></layout>
     <div class="wrapper">
         <div class="main">
