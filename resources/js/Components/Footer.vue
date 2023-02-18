@@ -1,7 +1,3 @@
-<script>
-
-</script>
-
 <template>
     <v-layout>
         <v-footer
@@ -25,5 +21,12 @@
     </v-layout>
 </template>
 
+<script>
+export default {
+    name: "Footer"
+}
+</script>
 
+<style scoped>
 
+</style>
