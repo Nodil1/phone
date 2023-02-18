@@ -18,4 +18,9 @@ export default defineComponent({
             <Footer/>
         </v-layout>
 </template>
+<style>
+main{
+    margin-top: 2%;
+}
+</style>
 

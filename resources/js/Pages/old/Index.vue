@@ -2,9 +2,11 @@
 
 import {defineComponent} from "vue";
 import DefaultLayaout from "@/Layouts/DefaultLayaout.vue";
+import Card from "@/Components/Card.vue";
+import Table from "@/Components/Table.vue";
 
 export default defineComponent({
-    components: {DefaultLayaout},
+    components: {Table, Card, DefaultLayaout},
         data () {
             return {
                 numbers: [
@@ -46,52 +48,26 @@ export default defineComponent({
             </section>
             <section class="content">
                 <div class="cards">
-
-                    <v-card
-                        v-for="item in numbers"
-                        :key="item.name"
-                        border
-                        class="mb-2"
-                        density="compact"
-                        prepend-avatar="https://randomuser.me/api/portraits/women/10.jpg"
-                        subtitle="item.name"
-                        title="item.name"
-                        variant="text"
-                    >
-                        <v-card-text>
-                            Предлагает услуги пробива Предлагает услуги пробива Предлагает услуги пробива
-                        </v-card-text>
-
-                        <template v-slot:actions>
-                            <v-btn color="primary" variant="text">View More</v-btn>
-
-                            <v-btn color="primary" variant="text">See in Map</v-btn>
-                        </template>
-                    </v-card>
+                    <Card v-for="item in numbers" :phone="item"/>
                 </div>
                 <div class="right-column">
-                    <v-table>
-                        <thead>
-                        Last numbers
-                        <tr>
-                            <th class="text-left">
-                                numbers
-                            </th>
-                            <th class="text-left">
-                                comments
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr
-                            v-for="item in numbers"
-                            :key="item.name"
-                        >
-                            <td>{{ item.name }}</td>
-                            <td>{{ item.calories }}</td>
-                        </tr>
-                        </tbody>
-                    </v-table>
+                    <thead>
+                    Last numbers
+                    <tr>
+                        <th class="text-left">
+                            numbers
+                        </th>
+                        <th class="text-left">
+                            comments
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr
+                    ><Table v-for="item in numbers" :phone="item"/>
+                    </tr>
+                    </tbody>
+
                 </div>
             </section>
         </div>
@@ -101,6 +77,8 @@ export default defineComponent({
 
 
 <style scoped>
-
+.content{
+    margin-top: 2%;
+}
 
 </style>
