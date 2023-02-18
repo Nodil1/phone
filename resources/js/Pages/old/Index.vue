@@ -1,5 +1,7 @@
 <script>
+
 import {defineComponent} from "vue";
+
 import Layout from "@/Layouts/layout.vue";
 
 export default defineComponent({
@@ -9,7 +11,8 @@ export default defineComponent({
 
 <template>
 
-    <layout></layout>
+        <layout></layout>
+
     <div class="wrapper">
         <div class="main">
 
@@ -35,6 +38,8 @@ export default defineComponent({
             </v-card-text>
         </v-card>
     </div>
+
+
 
 
 </template>
