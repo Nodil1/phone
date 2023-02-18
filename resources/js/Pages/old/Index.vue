@@ -1,17 +1,9 @@
 <script>
 
-import {defineComponent} from "vue";
-
-import Layout from "@/Layouts/layout.vue";
-
-export default defineComponent({
-    components: {Layout}
-})
 </script>
 
 <template>
 
-        <layout></layout>
 
     <div class="wrapper">
         <div class="main">
