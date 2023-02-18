@@ -14,8 +14,6 @@ use Inertia\Inertia;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
-
 Route::get('/', function () {
     return Inertia::render('old/Welcome', [
         'canLogin' => Route::has('login'),
@@ -24,10 +22,12 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+*/
 
-Route::get('/dashboard', function () {
-    return Inertia::render('old/Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/', function () {
+    return Inertia::render('old/Index');
+});
 
 
 require __DIR__.'/auth.php';
