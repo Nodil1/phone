@@ -10,11 +10,12 @@ export default defineComponent({
 </script>
 
 <template>
-    <Header/>
-    <slot/>
-    <Footer/>
-
+        <v-layout>
+            <Header/>
+            <v-main style="min-height: 1000px;">
+                <slot/>
+            </v-main>
+            <Footer/>
+        </v-layout>
 </template>
-
-
 

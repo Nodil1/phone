@@ -1,32 +1,44 @@
 <template>
-    <v-layout>
-        <v-footer
-            class="bg-indigo-lighten-1 text-center d-flex flex-column"
-        >
-            <div>
-                <v-btn
-
-                ></v-btn>
-            </div>
-
-            <div class="pt-0">
-                Чейномер.ру
-            </div>
-            <v-divider></v-divider>
-
-            <div>
+    <v-footer class="bg-grey-lighten-1">
+        <v-row justify="center" no-gutters>
+            <v-btn
+                v-for="link in links"
+                :key="link"
+                color="white"
+                variant="text"
+                class="mx-2"
+                rounded="xl"
+            >
+                {{ link }}
+            </v-btn>
+            <v-col class="text-center mt-4" cols="12">
                 {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-            </div>
-        </v-footer>
-    </v-layout>
+            </v-col>
+        </v-row>
+    </v-footer>
 </template>
 
 <script>
 export default {
-    name: "Footer"
+    name: "Footer",
+    data: () => ({
+        links: [
+            'Главная',
+            'About Us',
+            'Team',
+            'Services',
+            'Blog',
+            'Contact Us',
+        ],
+    })
 }
 </script>
 
 <style scoped>
-
+.bg-grey-lighten-1{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;}
 </style>
