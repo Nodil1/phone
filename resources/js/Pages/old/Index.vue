@@ -57,24 +57,9 @@ export default defineComponent({
                         </v-col>
                         <v-col>
                             <div class="right-column">
-                                <thead>
-                                <tr>
-                                    <th class="text-left">
-                                        Name
-                                    </th>
-                                    <th class="text-left">
-                                        Calories
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody>
-
-
-                                        <Table v-for="item in numbers" :phone="item"/>
-
-
-                                </tbody>
-
+                                <Table
+                                    :phones="numbers"
+                                />
                             </div>
                         </v-col>
                     </v-row>
