@@ -47,28 +47,39 @@ export default defineComponent({
                 </div>
             </section>
             <section class="content">
-                <div class="cards">
-                    <Card v-for="item in numbers" :phone="item"/>
-                </div>
-                <div class="right-column">
-                    <thead>
-                    Last numbers
-                    <tr>
-                        <th class="text-left">
-                            numbers
-                        </th>
-                        <th class="text-left">
-                            comments
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr
-                    ><Table v-for="item in numbers" :phone="item"/>
-                    </tr>
-                    </tbody>
+            <v-container class="bg-surface-variant">
+                <v-row no-gutters>
+                    <v-row>
+                        <v-col>
+                            <div class="cards">
+                                <Card v-for="item in numbers" :phone="item"/>
+                            </div>
+                        </v-col>
+                        <v-col>
+                            <div class="right-column">
+                                <thead>
+                                <tr>
+                                    <th class="text-left">
+                                        Name
+                                    </th>
+                                    <th class="text-left">
+                                        Calories
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
 
-                </div>
+
+                                        <Table v-for="item in numbers" :phone="item"/>
+
+
+                                </tbody>
+
+                            </div>
+                        </v-col>
+                    </v-row>
+                </v-row>
+            </v-container>
             </section>
         </div>
     </DefaultLayaout>
