@@ -1,12 +1,5 @@
 <template>
     <div class="text-center">
-        <v-btn
-            color="primary"
-            @click="dialog = true"
-        >
-            Open Dialog
-        </v-btn>
-
         <v-dialog
             v-model="dialog"
             width="100%"
@@ -14,7 +7,7 @@
             <v-card>
                 <slot></slot>
                 <v-card-actions>
-                    <v-btn color="primary" block @click="dialog = false">Close Dialog</v-btn>
+                    <v-btn color="primary" block @click="onClose">Close Dialog</v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>
@@ -33,7 +26,7 @@ export default {
     },
     data () {
         return {
-            dialog: false,
+            dialog: true,
         }
     },
 }
