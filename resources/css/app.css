@@ -10,8 +10,8 @@ html{
 
 }
 .search{
-    background-color: #00bfa5;
     min-height: 200px;
+
 }
 .content{
     display: flex;
@@ -25,6 +25,10 @@ html{
     padding-left: 16px;
     padding-right: 16px;
 }
-.v-card-actions{
-
+.search-input{
+    background-color: #00bfa5;
+    padding: 2%;
+}
+.v-card{
+    z-index: 10;
 }

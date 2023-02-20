@@ -20,15 +20,15 @@ export default {
                 color="white"
                 density="compact"
             >
-                <v-app-bar-title>Чейконтакт.ру</v-app-bar-title>
+                <v-toolbar>
+                    <v-toolbar-title>Чейконтакт.ру</v-toolbar-title>
                 <v-btn
-                    color="primary"
                     @click.stop="drawer = !drawer"
+                    icon = "mdi mdi-menu"
                 >
-                    Toggle
+
                 </v-btn>
-
-
+                </v-toolbar>
             </v-app-bar>
             <v-navigation-drawer
                 v-model="drawer"
@@ -46,7 +46,10 @@ export default {
 
 
 <style scoped>
-
+.v-card{
+    position: fixed;
+    z-index: 999;
+}
 
 </style>
 

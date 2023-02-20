@@ -12,7 +12,7 @@ export default defineComponent({
 <template>
         <v-layout>
             <Header/>
-            <v-main style="min-height: 1000px;">
+            <v-main style="">
                 <slot/>
             </v-main>
             <Footer/>

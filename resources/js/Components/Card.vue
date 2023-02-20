@@ -20,21 +20,26 @@
             </div>
             <div class="see">
                 4
-                <v-icon icon="mdi mdi-comment-outline"></v-icon>
+                <v-btn @click='login' ><v-icon>mdi-eye-check-outline</v-icon></v-btn>
             </div>
-
-
 
         </div>
     </v-card>
 </template>
 
 <script>
+import Modal from "@/Components/Modal.vue";
 export default {
-    name: "card",
-    props: ['phone']
+    components: {Modal},
+    name:"card",
+    props: ['onLogin','phone'],
+    methods: {
+        login () {
+            this.onLogin('login')
+        }
+    }
 
-}
+};
 </script>
 
 <style scoped>
@@ -44,6 +49,8 @@ export default {
     padding: 2%;
 }
 .see{
-    margin-right: 2%;
+    margin-right: 3%;
+    display: flex;
+    align-items: center;
 }
 </style>

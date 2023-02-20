@@ -3,10 +3,10 @@
         <thead>
         <tr>
             <th class="text-left">
-                Name
+                Номер
             </th>
             <th class="text-left">
-                Calories
+                Просмотров
             </th>
         </tr>
         </thead>
