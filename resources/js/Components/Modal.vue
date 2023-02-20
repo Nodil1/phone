@@ -5,10 +5,10 @@
             width="100%"
         >
             <v-card>
-                <slot></slot>
                 <v-card-actions>
-                    <v-btn color="primary" block @click="onClose">Close Dialog</v-btn>
+                    <v-icon block @click="onClose">mdi-close</v-icon>
                 </v-card-actions>
+                <slot></slot>
             </v-card>
         </v-dialog>
     </div>
@@ -27,7 +27,6 @@ export default {
     data () {
         return {
             dialog: true,
-            test: false
         }
     },
 }

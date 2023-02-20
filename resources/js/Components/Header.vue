@@ -43,7 +43,7 @@ export default {
                 >
                 </v-btn>
                     <v-toolbar-items v-for="item in items" :key="item" class="hidden-sm-and-down">
-                        <v-btn <Linkhref={item.link} flat>{{ item.text }}{{item.link}}</v-btn>
+                        <v-btn href={item.link} flat>{{ item.text }}{{item.link}}</v-btn>
                     </v-toolbar-items>
                 </v-toolbar>
             </v-app-bar>
