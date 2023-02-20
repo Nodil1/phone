@@ -33,7 +33,8 @@
     </DefaultLayaout>
 </template>
 <script>
-
+import { email, required } from '@vuelidate/validators'
+import { useVuelidate } from '@vuelidate/core'
 import {defineComponent} from "vue";
 import DefaultLayaout from "@/Layouts/DefaultLayaout.vue";
 import Card from "@/Components/Card.vue";

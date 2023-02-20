@@ -12,7 +12,7 @@
             width="100%"
         >
             <v-card>
-                <Comment/>
+                <slot></slot>
                 <v-card-actions>
                     <v-btn color="primary" block @click="dialog = false">Close Dialog</v-btn>
                 </v-card-actions>
@@ -26,6 +26,11 @@ import Comment from "@/Components/Comment.vue";
 export default {
     components: {Comment},
     name: "Modal",
+    methods: {
+      onClose(){
+          this.$emit("closeModal")
+      }
+    },
     data () {
         return {
             dialog: false,

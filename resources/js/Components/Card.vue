@@ -20,20 +20,33 @@
             </div>
             <div class="see">
                 4
-                <v-btn @click='login' ><v-icon>mdi-eye-check-outline</v-icon></v-btn>
+                <v-btn @click='openModal' ><v-icon>mdi-eye-check-outline</v-icon></v-btn>
             </div>
 
         </div>
+        <Modal v-if="isModalOpen" @closeModal="isModalOpen = false">
+            <Comment></Comment>
+        </Modal>
     </v-card>
 </template>
 
 <script>
 import Modal from "@/Components/Modal.vue";
+import Comment from "@/Components/Comment.vue";
+4
 export default {
-    components: {Modal},
+    components: {Modal, Comment},
     name:"card",
     props: ['onLogin','phone'],
+    data(){
+        return {
+            isModalOpen: false
+        }
+    },
     methods: {
+        openModal(){
+            this.isModalOpen = true
+        },
         login () {
             this.onLogin('login')
         }
