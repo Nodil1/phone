@@ -1,42 +1,47 @@
 <template>
     <form>
+
+        <slot/>
         <v-textarea label="Комментарий"
+                    class="ma-2"
                     v-model="state.comment"
                     :error-messages="v$.name.$errors.map(e => e.$message)"
                     :counter="10"
                     required
                     @input="v$.name.$touch"
+                    clearable
                     @blur="v$.name.$touch"
         ></v-textarea>
+        <div class="d-flex flex-row">
         <v-text-field
+            class="ma-2"
             v-model="state.name"
             :error-messages="v$.name.$errors.map(e => e.$message)"
             :counter="10"
             label="Name"
+            clearable
             required
             @input="v$.name.$touch"
             @blur="v$.name.$touch"
         ></v-text-field>
-
         <v-text-field
+            class="ma-2"
             v-model="state.email"
             :error-messages="v$.email.$errors.map(e => e.$message)"
             label="E-mail"
             required
+            clearable
             @input="v$.email.$touch"
             @blur="v$.email.$touch"
         ></v-text-field>
-
-        <v-select
-            v-model="state.select"
-            :items="items"
-            :error-messages="v$.select.$errors.map(e => e.$message)"
-            label="Item"
-            required
-            @change="v$.select.$touch"
-            @blur="v$.select.$touch"
-        ></v-select>
-
+            <v-select
+                class="ma-2"
+                clearable
+                label="Select"
+                :items="['Мошенник', 'Владелец 2112', 'Отец']"
+            ></v-select>
+        </div>
+        <Rating/>
         <v-checkbox
             v-model="state.checkbox"
             :error-messages="v$.checkbox.$errors.map(e => e.$message)"
@@ -45,16 +50,19 @@
             @change="v$.checkbox.$touch"
             @blur="v$.checkbox.$touch"
         ></v-checkbox>
-
-        <v-btn
-            class="me-4"
-            @click="v$.$validate"
-        >
-            submit
-        </v-btn>
-        <v-btn @click="clear">
-            clear
-        </v-btn>
+        <div class="d-flex align-center justify-space-evenly ma-3">
+            <v-btn
+                prepend-icon="mdi-send" variant="outlined" color="success"
+            >
+                Отправить
+            </v-btn>
+            <v-btn
+                prepend-icon="mdi-backspace-outline" variant="outlined"
+                @click="clear"
+            >
+                Очистить
+            </v-btn>
+        </div>
     </form>
 </template>
 <script>
@@ -62,8 +70,10 @@
 import { reactive, ref } from 'vue'
 import { useVuelidate } from '@vuelidate/core'
 import { email, required } from '@vuelidate/validators'
+import Rating from "@/Components/Rating.vue";
 
 export default {
+    components: {Rating},
     setup () {
         const initialState = {
             comment:'',
@@ -110,5 +120,7 @@ export default {
 </script>
 
 <style scoped>
-
+.v-field__input{
+    opacity: 0;
+}
 </style>

@@ -35,10 +35,4 @@ export default {
 </script>
 
 <style scoped>
-.bg-grey-lighten-1{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: auto;}
 </style>

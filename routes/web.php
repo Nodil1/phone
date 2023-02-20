@@ -27,7 +27,10 @@ n
 
 
 Route::get('/', function () {
-    return Inertia::render('old/Index');
+    return Inertia::render('Index');
+});
+Route::get('/Number', function () {
+    return Inertia::render('Number');
 });
 
 

@@ -27,8 +27,6 @@
             </v-container>
             </section>
             <Pagination/>
-            <Card :onLogin='onLogin'/>
-
         </div>
     </DefaultLayaout>
 </template>
@@ -47,16 +45,11 @@ import Modal from "@/Components/Modal.vue";
 
 export default defineComponent({
     components: {Modal, Comment, Pagination, Search, Description, Table, Card, DefaultLayaout},
-    methods: {
-        onLogin (data) {
-            console.log('child component said login',data)
-        }
-    },
     data () {
         return {
             numbers: [
                 {
-                    name: '8(904)-598-62-00',
+                    name: '8(905)-598-62-00',
                     calories: 1,
                 },
                 {
@@ -64,11 +57,11 @@ export default defineComponent({
                     calories: 2,
                 },
                 {
-                    name: '8(904)-598-62-00',
+                    name: '8(903)-598-62-00',
                     calories: 1,
                 },
                 {
-                    name: '8(904)-598-62-00',
+                    name: '8(914)-598-62-00',
                     calories: 2,
                 },]}},
 })

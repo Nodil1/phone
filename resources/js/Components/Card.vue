@@ -3,29 +3,34 @@
         border
         class="mb-2"
         density="compact"
-        prepend-avatar="https://randomuser.me/api/portraits/women/10.jpg"
-        append-icon="mdi mdi-decagram"
         color="surface-variant" size="12"
         :title="phone.name"
         variant="text"
     >
+        <template v-slot:append>
+            <v-icon color="green"> mdi-decagram </v-icon>
+        </template>
+
         <v-card-text>
             Евгений: Предлагает услуги
         </v-card-text>
 
         <div class="action">
             <div class="see">
-                500
+                <div class="count">{{ phone.calories}}</div>
                 <v-icon icon="mdi mdi-eye-check-outline"></v-icon>
             </div>
             <div class="see">
-                4
-                <v-btn @click='openModal' ><v-icon>mdi-eye-check-outline</v-icon></v-btn>
+                <div class="count">{{ phone.calories}}</div>
+                <v-icon @click='openModal' >mdi-comment</v-icon>
             </div>
-
         </div>
         <Modal v-if="isModalOpen" @closeModal="isModalOpen = false">
-            <Comment></Comment>
+            <Comment>
+                <v-alert class="ma-2">
+                    <v-alert-text>Отсавьте отзыв о номере: {{phone.name}}</v-alert-text>
+                </v-alert>
+            </Comment>
         </Modal>
     </v-card>
 </template>
@@ -33,7 +38,7 @@
 <script>
 import Modal from "@/Components/Modal.vue";
 import Comment from "@/Components/Comment.vue";
-4
+
 export default {
     components: {Modal, Comment},
     name:"card",
@@ -46,16 +51,17 @@ export default {
     methods: {
         openModal(){
             this.isModalOpen = true
+            console.log('child component said login')
         },
-        login () {
-            this.onLogin('login')
-        }
     }
 
 };
 </script>
 
 <style scoped>
+.comment{
+
+}
 .action{
     display: flex;
     justify-content: flex-end;
@@ -65,5 +71,8 @@ export default {
     margin-right: 3%;
     display: flex;
     align-items: center;
+}
+.count{
+    margin-right: 15%;
 }
 </style>

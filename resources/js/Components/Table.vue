@@ -16,7 +16,7 @@
             :key="item.name"
         >
             <td>{{ item.name }}</td>
-            <td>{{ item.calories }}</td>
+            <td class="sees">{{ item.calories }}</td>
         </tr>
         </tbody>
     </v-table>
@@ -30,5 +30,7 @@ export default {
 </script>
 
 <style scoped>
-
+.sees{
+    text-align: center;
+}
 </style>

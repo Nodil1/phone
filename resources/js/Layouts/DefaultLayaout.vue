@@ -14,8 +14,8 @@ export default defineComponent({
             <Header/>
             <v-main style="">
                 <slot/>
+                <Footer/>
             </v-main>
-            <Footer/>
         </v-layout>
 </template>
 <style>
