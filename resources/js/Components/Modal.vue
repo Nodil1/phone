@@ -27,6 +27,7 @@ export default {
     data () {
         return {
             dialog: true,
+            test: false
         }
     },
 }
