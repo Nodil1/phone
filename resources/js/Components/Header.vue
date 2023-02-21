@@ -1,13 +1,14 @@
 <script>
 import { Link } from '@inertiajs/vue3'
 export default {
+    components: {Link},
     data () {
         return {
             drawer: null,
             items: [
                 {
                     text: 'Главная',
-                    link: '/'
+                    link: '/ee'
                 },
                 {
                     text: 'Коды номеров',
@@ -42,8 +43,9 @@ export default {
                     icon = "mdi mdi-menu"
                 >
                 </v-btn>
+
                     <v-toolbar-items v-for="item in items" :key="item" class="hidden-sm-and-down">
-                        <v-btn href={item.link} flat>{{ item.text }}{{item.link}}</v-btn>
+                        <Link :href="item.link"><v-btn flat>{{ item.text }}{{item.link}}</v-btn></Link>>
                     </v-toolbar-items>
                 </v-toolbar>
             </v-app-bar>
