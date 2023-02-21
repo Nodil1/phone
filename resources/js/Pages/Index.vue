@@ -10,7 +10,8 @@
             <v-container class="bg-surface-variant mb-1">
                 <v-row justify="space-between" class="mb-6">
                     <v-col         sm="5"
-                                   md="6">
+                                   md="6"
+                                   >
                             <div class="cards">
                                 <Card v-for="item in numbers" :phone="item"/>
                             </div>
@@ -33,6 +34,8 @@
 <script>
 import { email, required } from '@vuelidate/validators'
 import { useVuelidate } from '@vuelidate/core'
+import { Link } from '@inertiajs/vue3';
+
 import {defineComponent} from "vue";
 import DefaultLayaout from "@/Layouts/DefaultLayaout.vue";
 import Card from "@/Components/Card.vue";

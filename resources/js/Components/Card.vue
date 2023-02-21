@@ -1,4 +1,32 @@
+<script>
+import { Link } from '@inertiajs/vue3';
+import Modal from "@/Components/Modal.vue";
+import Comment from "@/Components/Comment.vue";
+
+
+export default {
+    components: {Modal, Comment,Link},
+    name:"card",
+    props: ['onLogin','phone'],
+    data(){
+        return {
+            isModalOpen: false
+        }
+    },
+    methods: {
+        openModal(){
+            this.isModalOpen = true
+            console.log('child component said login')
+        },
+    }
+
+};
+</script>
+
 <template>
+    <Link :href="phone.name">
+
+
     <v-card
         border
         class="mb-2"
@@ -25,38 +53,19 @@
                 <v-icon @click='openModal' >mdi-comment</v-icon>
             </div>
         </div>
-        <Modal v-if="isModalOpen" @closeModal="isModalOpen = false">
-            <Comment>
-                <v-alert class="ma-2">
-                    <v-alert-text>Отсавьте отзыв о номере: {{phone.name}}</v-alert-text>
-                </v-alert>
-            </Comment>
-        </Modal>
     </v-card>
+    </Link>
+    <Modal v-if="isModalOpen" @closeModal="isModalOpen = false">
+        <Comment>
+            <v-alert class="ma-2">
+                <v-alert-text>Отсавьте отзыв о номере: {{phone.name}}</v-alert-text>
+            </v-alert>
+        </Comment>
+    </Modal>
+
 </template>
 
-<script>
-import Modal from "@/Components/Modal.vue";
-import Comment from "@/Components/Comment.vue";
 
-export default {
-    components: {Modal, Comment},
-    name:"card",
-    props: ['onLogin','phone'],
-    data(){
-        return {
-            isModalOpen: false
-        }
-    },
-    methods: {
-        openModal(){
-            this.isModalOpen = true
-            console.log('child component said login')
-        },
-    }
-
-};
-</script>
 
 <style scoped>
 .comment{
