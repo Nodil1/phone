@@ -12,26 +12,25 @@ html{
     min-height: 200px;
 
 }
-.content{
-    display: flex;
-    justify-content: space-between;
-}
-
 .wrapper {
     max-width: 98%;
     margin-left: auto;
     margin-right: auto;
     padding-left: 16px;
     padding-right: 16px;
+    margin-top: 2%;
 }
-.search-input{
-    background-color: #00bfa5;
-    padding: 2%;
+.ttle-lst{
+    padding: 2% 0 2% 0;
 }
 .v-card{
     z-index: 10;
 }
-.v-field__input input{
-  opacity: 0;
+.v-toolbar__content{
+    background: skyblue;
+    color: white;
 }
 
+.v-navigation-drawer__content{
+    color: white;
+}

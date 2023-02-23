@@ -16,16 +16,45 @@
                 @click:append-inner="onClick"
             ></v-text-field>
         </v-card-text>
-        <div class="d-flex justify-center">
-            <v-card class="descriptoin" title="Кто звонил с номера" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima, at placeat totam, magni doloremque veniam neque porro libero rerum unde voluptatem!" variant="tonal"></v-card>
-        </div>
+        <v-carousel
+            height="100"
+            hide-delimiters
+            progress="primary"
+            show-arrows="hover"
+        >
+            <v-carousel-item
+                v-for="(slide, i) in slides"
+                :key="i"
+            >
+                <v-sheet
+                    height="100%"
+                >
+                    <div class="d-flex fill-height justify-center align-center">
+                        <div class="text-h2">
+                            {{ slide }} Slide
+                        </div>
+                    </div>
+                </v-sheet>
+            </v-carousel-item>
+        </v-carousel>
     </v-card>
 
 </template>
 
 <script>
 export default {
-    name: "Search"
+    name: "Search",
+    data () {
+        return {
+            slides: [
+                'First',
+                'Second',
+                'Third',
+                'Fourth',
+                'Fifth',
+            ],
+        }
+    },
 }
 </script>
 

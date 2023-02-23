@@ -12,7 +12,8 @@
                 {{ link }}
             </v-btn>
             <v-col class="text-center mt-4" cols="12">
-                {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+                2023 - {{ new Date().getFullYear() }}
+                <v-btn href="/" variant="text"><v-icon>mdi-card-account-phone-outline</v-icon>NOMERA.COM</v-btn>
             </v-col>
         </v-row>
     </v-footer>
@@ -24,11 +25,8 @@ export default {
     data: () => ({
         links: [
             'Главная',
-            'About Us',
-            'Team',
-            'Services',
-            'Blog',
-            'Contact Us',
+            'Коды номеров',
+            'Пробив номера'
         ],
     })
 }

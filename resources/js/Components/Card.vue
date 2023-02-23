@@ -7,7 +7,7 @@ import Comment from "@/Components/Comment.vue";
 export default {
     components: {Modal, Comment,Link},
     name:"card",
-    props: ['onLogin','phone'],
+    props: ['phone'],
     data(){
         return {
             isModalOpen: false
@@ -24,41 +24,52 @@ export default {
 </script>
 
 <template>
-    <Link :href="phone.name">
 
 
     <v-card
         border
-        class="mb-2"
+        class="mb-2 overflow-hidden"
         density="compact"
         color="surface-variant" size="12"
-        :title="phone.name"
         variant="text"
     >
+        <v-card-item class="item-title">
         <template v-slot:append>
-            <v-icon color="green"> mdi-decagram </v-icon>
+            <v-icon color="green"> mdi-circle </v-icon>
         </template>
-
-        <v-card-text>
-            Евгений: Предлагает услуги
+        <template v-slot:prepend>
+            <Link :href="'/number/8'+ phone.number">
+                <v-card-title>
+                    8{{ phone.number }}
+                </v-card-title>
+            </Link>
+        </template>
+            <v-card-subtitle class="date">
+                {{phone.comments[0].date}}
+            </v-card-subtitle>
+        </v-card-item>
+        <v-card-subtitle>
+            Метка: {{phone.type}}
+        </v-card-subtitle>
+        <v-card-text class="d-flex align-baseline">
+            <p class="font-weight-bold text-subtitle-2">{{phone.comments[0].name}}: </p> {{phone.comments[0].text}}
         </v-card-text>
 
         <div class="action">
             <div class="see">
-                <div class="count">{{ phone.calories}}</div>
+                <div class="count">{{ phone.views}}</div>
                 <v-icon icon="mdi mdi-eye-check-outline"></v-icon>
             </div>
             <div class="see">
-                <div class="count">{{ phone.calories}}</div>
-                <v-icon @click='openModal' >mdi-comment</v-icon>
+                <div class="count">{{ phone.comments.length}}</div>
+                <v-icon @click='openModal' >mdi-comment-outline</v-icon>
             </div>
         </div>
     </v-card>
-    </Link>
     <Modal v-if="isModalOpen" @closeModal="isModalOpen = false">
         <Comment>
             <v-alert class="ma-2">
-                <v-alert-text>Отсавьте отзыв о номере: {{phone.name}}</v-alert-text>
+                <v-alert-text>Отсавьте отзыв о номере: 8{{phone.number}}</v-alert-text>
             </v-alert>
         </Comment>
     </Modal>
@@ -68,13 +79,21 @@ export default {
 
 
 <style scoped>
-.comment{
+.date{
+    padding: 0;
+}
+.item-title{
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 1%;
 
 }
 .action{
     display: flex;
     justify-content: flex-end;
     padding: 2%;
+}
+.mb-2{
+    border-bottom: 1px solid lightgrey;
 }
 .see{
     margin-right: 3%;

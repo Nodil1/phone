@@ -13,10 +13,9 @@
         <tbody>
         <tr
             v-for="item in phones"
-            :key="item.name"
         >
-            <td>{{ item.name }}</td>
-            <td class="sees">{{ item.calories }}</td>
+            <td>8{{ item.number }}</td>
+            <td class="sees">{{ item.views }}</td>
         </tr>
         </tbody>
     </v-table>

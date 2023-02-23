@@ -9,7 +9,6 @@
                     :counter="10"
                     required
                     @input="v$.name.$touch"
-                    clearable
                     @blur="v$.name.$touch"
         ></v-textarea>
         <div class="d-flex flex-row">
@@ -35,9 +34,8 @@
             @blur="v$.email.$touch"
         ></v-text-field>
             <v-select
-                class="ma-2"
-                clearable
-                label="Select"
+                class="select ma-2"
+                label="Метка номера"
                 :items="['Мошенник', 'Владелец 2112', 'Отец']"
             ></v-select>
         </div>
@@ -120,7 +118,7 @@ export default {
 </script>
 
 <style scoped>
-.v-field__input{
+.selecwt{
     opacity: 0;
 }
 </style>

@@ -1,12 +1,6 @@
 <template>
     <DefaultLayaout>
-        <section class="search">
-            <div class="search-input">
-                <Search/>
-            </div>
-        </section>
         <div class="wrapper">
-            <section class="content">
             <v-container class="bg-surface-variant mb-1">
                 <v-row justify="space-between" class="mb-6">
                     <v-col         sm="5"
@@ -26,7 +20,6 @@
                     </v-col>
                 </v-row>
             </v-container>
-            </section>
             <Pagination/>
         </div>
     </DefaultLayaout>
@@ -52,28 +45,24 @@ export default defineComponent({
         return {
             numbers: [
                 {
-                    name: '8(905)-598-62-00',
-                    calories: 1,
-                },
-                {
-                    name: '8(904)-598-62-00',
-                    calories: 2,
-                },
-                {
-                    name: '8(903)-598-62-00',
-                    calories: 1,
-                },
-                {
-                    name: '8(914)-598-62-00',
-                    calories: 2,
-                },]}},
-})
+                    number: "8005553535",
+                    type: "Мошенник",
+                    comments: [
+                        {
+                            name: "Diman",
+                            text: "2112 is good. Представляет собой III поколение легковых автомобилей производства ВАЗ. Головной моделью семейства является седан ВАЗ-2110Представляет собой III поколение легковых автомобилей производства ВАЗ. Головной моделью семейства является седан ВАЗ-2110Представляет собой III поколение легковых автомобилей производства ВАЗ. Головной моделью семейства является седан ВАЗ-2110",
+                            date:"01.02.45 17:44"
+                        }
+                    ],
+                    stars: 3.4,
+                    views: 123
+                }]
+        }
+
+}})
 </script>
 
 <style scoped>
-.content{
-    margin-top: 2%;
-}
 .v-container{
     padding: 0;
 }

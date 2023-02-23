@@ -29,8 +29,8 @@ n
 Route::get('/', function () {
     return Inertia::render('Index');
 });
-Route::get('/Number', function () {
-    return Inertia::render('Number');
+Route::get('/number/{number}', function (string $number) {
+    return Inertia::render('Number',['number' => $number]);
 });
 
 
