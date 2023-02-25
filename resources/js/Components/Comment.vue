@@ -5,12 +5,12 @@
                     class="ma-2"
                     v-model="state.comment"
                     :error-messages="v$.name.$errors.map(e => e.$message)"
-                    :counter="10"
+                    :counter="100"
                     required
                     @input="v$.name.$touch"
                     @blur="v$.name.$touch"
         ></v-textarea>
-        <div class="d-flex flex-row">
+        <div class="d-flex flex-column">
         <v-text-field
             class="ma-2"
             v-model="state.name"
@@ -30,11 +30,12 @@
             @input="v$.email.$touch"
             @blur="v$.email.$touch"
         ></v-text-field>
-            <v-select
+            <v-autocomplete
+                required
                 class="select ma-2"
-                label="Метка номера"
-                :items="['Мошенник', 'Владелец 2112', 'Отец']"
-            ></v-select>
+                label="Выберите метку"
+                :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
+            ></v-autocomplete>
         </div>
         <Rating/>
         <v-checkbox
@@ -47,16 +48,18 @@
         ></v-checkbox>
         <div class="d-flex align-center justify-space-evenly ma-3">
             <v-btn
+                @click="$refs.myChild.Snack()"
                 prepend-icon="mdi-send" variant="outlined" color="success"
             >
                 Отправить
             </v-btn>
             <v-btn
-                prepend-icon="mdi-backspace-outline" variant="outlined"
+                prepend-icon="mdi-backspace-reverse-outline" variant="outlined"
                 @click="clear"
             >
                 Очистить
             </v-btn>
+            <Snackbar ref="myChild" />
         </div>
     </form>
 </template>
@@ -66,9 +69,11 @@ import { reactive, ref } from 'vue'
 import { useVuelidate } from '@vuelidate/core'
 import { email, required } from '@vuelidate/validators'
 import Rating from "@/Components/Rating.vue";
+import Snackbar from "@/Components/Snackbar.vue";
+import snackbar from "@/Components/Snackbar.vue";
 
 export default {
-    components: {Rating},
+    components: {Snackbar, Rating},
     setup () {
         const initialState = {
             comment:'',
@@ -85,8 +90,7 @@ export default {
         const items = ref([
             'Item 1',
             'Item 2',
-            'Item 3',
-            'Item 4',
+            'Item 3'
         ])
 
         const rules = {
@@ -115,7 +119,7 @@ export default {
 </script>
 
 <style scoped>
-.selecwt{
-    opacity: 0;
+.v-autocomplete{
+    background: inherit;
 }
 </style>

@@ -26,19 +26,24 @@
 
                 <v-card-actions>
                     <v-spacer></v-spacer>
+                    1
                     <v-btn
+                        @click="$refs.myChild.Snack()"
                         icon
                         color="success"
                     >
                         <v-icon>mdi-thumb-up</v-icon>
                     </v-btn>
+                    43
                     <v-btn
+                        @click="$refs.myChild.Snack()"
                         icon
                         color="error"
                     >
                         <v-icon>mdi-thumb-down</v-icon>
                     </v-btn>
                 </v-card-actions>
+                <Snackbar ref="myChild"/>
                 <v-expand-transition>
                     <div v-show="show">
                         <v-divider></v-divider>
@@ -56,10 +61,16 @@
 
 <script>
 import { Link } from '@inertiajs/vue3';
+import Snackbar from "@/Components/Snackbar.vue";
 export default {
-    components:{Link},
+    components:{Snackbar, Link},
     name: "Commentlist",
-    props: ['value']
+    props: ['value'],
+    data: () => ({
+        snackbar: false,
+        text: 'Спасибо за ваш отзыв!',
+        timeout: 1000,
+    }),
 }
 </script>
 

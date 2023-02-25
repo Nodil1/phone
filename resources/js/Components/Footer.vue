@@ -1,6 +1,6 @@
 <template>
     <v-footer
-    color="#4B83C6">
+    color="#0d2f58">
         <v-row justify="center" no-gutters>
             <v-toolbar-items v-for="item in items" :key="item" class="pa-1">
                 <v-btn                 color="white"

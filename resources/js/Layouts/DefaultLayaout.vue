@@ -4,8 +4,9 @@ import {defineComponent} from "vue";
 import Header from "@/Components/Header.vue";
 import Footer from "@/Components/Footer.vue";
 import Search from "@/Components/Search.vue";
+import Snackbar from "@/Components/Snackbar.vue";
 export default defineComponent({
-    components: {Search, Footer, Header}
+    components: {Snackbar, Search, Footer, Header}
 })
 </script>
 <template>
@@ -27,6 +28,7 @@ export default defineComponent({
                 color="white"
                 class="fixed_button"
             ></v-btn>
+            <Snackbar/>
         </v-layout>
 </template>
 <style>

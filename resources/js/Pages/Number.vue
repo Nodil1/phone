@@ -11,7 +11,7 @@
             </template>
         </v-alert>
         <div class="wrapper number">
-            <v-container class="bg-surface-variant mb-1">
+            <v-container class="mb-1">
                 <v-row justify="space-between" class="mb-6">
                     <v-col         sm="7"
                                    md="7"
@@ -56,6 +56,7 @@
 </template>
 
 <script>
+
 import DefaultLayaout from "@/Layouts/DefaultLayaout.vue";
 import parsePhoneNumber from 'libphonenumber-js'
 import Info from "@/Components/Info.vue"
@@ -68,7 +69,7 @@ const phoneNumber = parsePhoneNumber('+79045986298')
 console.log(phoneNumber.formatInternational())
 
 
-export default  {
+export default {
     name: "Number",
     components: {BarChart, Commentitem, Similar, Lastcomments, Comment, Info, DefaultLayaout},
     props:['phone'],
@@ -137,6 +138,7 @@ export default  {
 .wrapper{
     background: rgb(11, 130, 179);
     color:white;
+
 }
 
 </style>

@@ -6,12 +6,11 @@
     >
         <v-card-text>
             <v-text-field
-                :loading="loading"
+                class="ma-2"
                 density="compact"
-                variant="solo"
                 label="Введите номер"
                 append-inner-icon="mdi-magnify"
-                single-line
+                required
                 hide-details
                 @click:append-inner="onClick"
             ></v-text-field>
