@@ -9,23 +9,31 @@ export default defineComponent({
     components: {Search, Footer, Header}
 })
 </script>
-
 <template>
         <v-layout>
             <Header/>
-            <v-main style="">
+            <v-main>
+                <div class="wrapper">
                     <div class="search-input">
                         <Search/>
                     </div>
+                </div>
                 <slot/>
+                <v-btn
+                    fixed
+                    dark
+                    fab
+                    top
+                    right
+                    color="pink"
+                >
+                    <v-icon>add</v-icon>
+                </v-btn>
                 <Footer/>
             </v-main>
         </v-layout>
 </template>
 <style>
-main{
-    margin-top: 2%;
-}
 .search-input{
     background-color: #6fb1cc;
     padding: 2%;

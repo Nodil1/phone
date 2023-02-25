@@ -12,7 +12,7 @@ export default {
                 },
                 {
                     text: 'Коды номеров',
-                    link: '/'
+                    link: '/codes'
                 },
                 {
                     text: 'Пробив номера',

@@ -1,6 +1,7 @@
 <template>
-    <v-alert title="Похожие номера" variant="text" class="ttle-lst"></v-alert>
-    <v-container class="bg-surface-variant" variant="outlined">
+    <v-alert title="Похожие номера" class="info-ttl" variant="text"></v-alert>
+    <v-card border class="info">
+    <v-container variant="outlined">
         <v-row no-gutters>
             <v-col
                 v-for="n in 16"
@@ -8,20 +9,25 @@
                 cols="12"
                 sm="4"
             >
-                <v-sheet class="ma-2 pa-2" href="/">
-                    88005553536
+                <v-sheet class="ma-2 pa-2" href="/" border rounded>
+                    <a href="/">88005553536</a>
                 </v-sheet>
             </v-col>
         </v-row>
     </v-container>
+    </v-card>
 </template>
 
 <script>
 export default {
-    name: "Similar"
+    name: "Similar",
+    props:['code']
 }
 </script>
 
 <style scoped>
-
+.info-ttl{
+    color: white;
+    padding: 5% 0 5% 0;
+}
 </style>

@@ -1,6 +1,5 @@
 <template>
     <form>
-
         <slot/>
         <v-textarea label="Комментарий"
                     class="ma-2"
@@ -18,7 +17,6 @@
             :error-messages="v$.name.$errors.map(e => e.$message)"
             :counter="10"
             label="Name"
-            clearable
             required
             @input="v$.name.$touch"
             @blur="v$.name.$touch"
@@ -29,7 +27,6 @@
             :error-messages="v$.email.$errors.map(e => e.$message)"
             label="E-mail"
             required
-            clearable
             @input="v$.email.$touch"
             @blur="v$.email.$touch"
         ></v-text-field>

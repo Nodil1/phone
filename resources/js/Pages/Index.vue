@@ -1,10 +1,18 @@
 <template>
     <DefaultLayaout>
+            <v-alert
+                text="Часто на экране телефона появляются незнакомые номера. Чтобы быстро понять, кто вам звонил, с какого сотового оператора и из какого региона мы разработали данный сервис. Наш справочник содержит абонентов всех мобильных телефонов России."
+                class="main-text"
+            >
+        <template v-slot:title>
+                <h1>Звонят с незнакомого номера</h1>
+        </template>
+            </v-alert>
         <div class="wrapper">
-            <v-container class="bg-surface-variant mb-1">
-                <v-row justify="space-between" class="mb-6">
+            <v-container class="bg-surface-variant">
+                <v-row justify="space-between">
                     <v-col         sm="5"
-                                   md="6"
+                                   md="7"
                                    >
                             <div class="cards">
                                 <Card v-for="item in numbers" :phone="item"/>
@@ -50,6 +58,19 @@ export default defineComponent({
                     comments: [
                         {
                             name: "Diman",
+                            text: "2110Представляет собой III поколение легковых автомобилей производства ВАЗ. Головной моделью семейства является седан ВАЗ-2110",
+                            date:"01.02.45 17:44"
+                        }
+                    ],
+                    stars: 3.4,
+                    views: 123
+                },
+                {
+                    number: "8905553535",
+                    type: "Мошенник",
+                    comments: [
+                        {
+                            name: "Diman",
                             text: "2112 is good. Представляет собой III поколение легковых автомобилей производства ВАЗ. Головной моделью семейства является седан ВАЗ-2110Представляет собой III поколение легковых автомобилей производства ВАЗ. Головной моделью семейства является седан ВАЗ-2110Представляет собой III поколение легковых автомобилей производства ВАЗ. Головной моделью семейства является седан ВАЗ-2110",
                             date:"01.02.45 17:44"
                         }
@@ -65,5 +86,16 @@ export default defineComponent({
 <style scoped>
 .v-container{
     padding: 0;
+}
+.main-text{
+    margin: 3%;
+    color: white;
+    background: #4B83C6;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+
 }
 </style>

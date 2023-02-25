@@ -32,6 +32,11 @@ Route::get('/', function () {
 Route::get('/number/{number}', function (string $number) {
     return Inertia::render('Number',['number' => $number]);
 });
-
+Route::get('/codes/{code}', function (string $code) {
+    return Inertia::render('Code',['code' => $code]);
+});
+Route::get('/codes', function () {
+    return Inertia::render('Numbercodes');
+});
 
 require __DIR__.'/auth.php';

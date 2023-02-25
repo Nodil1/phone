@@ -1,4 +1,5 @@
 <template>
+    <v-card border>
     <v-table>
         <thead>
         <tr>
@@ -19,6 +20,7 @@
         </tr>
         </tbody>
     </v-table>
+    </v-card>
 </template>
 
 <script>

@@ -1,15 +1,15 @@
 <template>
     <v-card
         class="mx-auto"
-        color="grey-lighten-3"
-        max-width="80%"
+        color="white"
+        max-width="100%"
     >
         <v-card-text>
             <v-text-field
                 :loading="loading"
                 density="compact"
                 variant="solo"
-                label="Search templates"
+                label="Введите номер"
                 append-inner-icon="mdi-magnify"
                 single-line
                 hide-details
@@ -30,7 +30,7 @@
                     height="100%"
                 >
                     <div class="d-flex fill-height justify-center align-center">
-                        <div class="text-h2">
+                        <div class="text-h6">
                             {{ slide }} Slide
                         </div>
                     </div>
@@ -47,7 +47,7 @@ export default {
     data () {
         return {
             slides: [
-                'First',
+                'yyyyyyyyyyyyyyyyyyyy',
                 'Second',
                 'Third',
                 'Fourth',

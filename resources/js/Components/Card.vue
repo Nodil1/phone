@@ -27,22 +27,20 @@ export default {
 
 
     <v-card
-        border
         class="mb-2 overflow-hidden"
         density="compact"
-        color="surface-variant" size="12"
-        variant="text"
+        border
+
     >
+        <Link :href="'/number/8'+ phone.number">
         <v-card-item class="item-title">
         <template v-slot:append>
             <v-icon color="green"> mdi-circle </v-icon>
         </template>
         <template v-slot:prepend>
-            <Link :href="'/number/8'+ phone.number">
                 <v-card-title>
                     8{{ phone.number }}
                 </v-card-title>
-            </Link>
         </template>
             <v-card-subtitle class="date">
                 {{phone.comments[0].date}}
@@ -54,7 +52,7 @@ export default {
         <v-card-text class="d-flex align-baseline">
             <p class="font-weight-bold text-subtitle-2">{{phone.comments[0].name}}: </p> {{phone.comments[0].text}}
         </v-card-text>
-
+        </Link>
         <div class="action">
             <div class="see">
                 <div class="count">{{ phone.views}}</div>

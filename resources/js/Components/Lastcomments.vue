@@ -1,5 +1,4 @@
 <template>
-    <v-alert title="Последние комментарии" variant="text" class="ttle-lst"></v-alert>
     <v-row dense>
         <v-col cols="12">
             <v-card
