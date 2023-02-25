@@ -6,21 +6,21 @@
             </template>
             <template v-slot:text>
                 <div class="d-flex flex-column">
-                <h2>Кто звонил c номера 8{{numbers[0].number}}</h2><p>или +7{{numbers[0].number}} ? Узнайте информацию по звонкам с номера телефона +7{{numbers[0].number}}</p>
+                <h3>Кто звонил c номера +7{{numbers[0].number}}</h3><p>или +7{{numbers[0].number}} ? Узнайте информацию по звонкам с номера телефона +7{{numbers[0].number}}</p>
                 </div>
             </template>
         </v-alert>
-        <div class="wrapper">
+        <div class="wrapper number">
             <v-container class="bg-surface-variant mb-1">
                 <v-row justify="space-between" class="mb-6">
-                    <v-col         sm="5"
+                    <v-col         sm="7"
                                    md="7"
                     >
                         <div class="main-info">
-                            <v-card>
-                                <v-card-title>
+                            <v-card class="mb-5 text-h6">
+                                <v-card-text class="text-h6">
                                     <h3>Информация о номере: 8{{numbers[0].number}}</h3>
-                                </v-card-title>
+                                </v-card-text>
                             </v-card>
                             <Info :number="numbers"/>
                         </div>
@@ -31,9 +31,10 @@
                             </template>
                         </v-alert>
                         <Commentitem v-for="item in numbers" :value="item"/>
-                        <v-alert class="info-ttl" variant="text">
-                            <template v-slot:title>
-                                <div class="inalert">Звонили с этого номера?</div><div class="inalert d-flex">Оставьте<h2>отзыв о номере - +7{{numbers[0].number}}</h2></div>
+                        <v-alert class="info-ttl" variant="text"
+                            title="Звонили с этого номера? Вы можете оставить">
+                            <template v-slot:text>
+                                <h2>Отзыв о номере - +7{{numbers[0].number}}</h2>
                             </template>
                         </v-alert>
                         <v-card border class="info">
@@ -124,11 +125,18 @@ export default  {
     color: white;
     padding: 5% 0 5% 0;
 }
+.number{
+    padding: 0;
+}
 .info-ttl-first{
     color: white;
     padding: 0% 0 5%;
     font-size: larger;
 
+}
+.wrapper{
+    background: rgb(11, 130, 179);
+    color:white;
 }
 
 </style>

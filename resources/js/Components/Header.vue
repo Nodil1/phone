@@ -15,8 +15,8 @@ export default {
                     link: '/codes'
                 },
                 {
-                    text: 'Пробив номера',
-                    link: '/Number'
+                    text: 'Как пробить номер?',
+                    link: '/probiv'
                 }
             ]
         }

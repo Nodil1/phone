@@ -9,6 +9,9 @@
             <th class="text-left">
                 Просмотров
             </th>
+            <th class="text-left">
+                Оценка
+            </th>
         </tr>
         </thead>
         <tbody>
@@ -16,7 +19,8 @@
             v-for="item in phones"
         >
             <td>8{{ item.number }}</td>
-            <td class="sees">{{ item.views }}</td>
+            <td>{{ item.views }} шт</td>
+            <td>{{ item.stars }}</td>
         </tr>
         </tbody>
     </v-table>

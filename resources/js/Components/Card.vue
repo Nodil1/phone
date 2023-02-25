@@ -35,7 +35,7 @@ export default {
         <Link :href="'/number/8'+ phone.number">
         <v-card-item class="item-title">
         <template v-slot:append>
-            <v-icon color="green"> mdi-circle </v-icon>
+            <v-icon color="red"> mdi-circle </v-icon>
         </template>
         <template v-slot:prepend>
                 <v-card-title>

@@ -56,9 +56,8 @@ export default {
 
 <style scoped>
 .main-text{
-    margin: 3%;
     color: white;
-    background: #4B83C6;
+    background: #0b82b3;
     width: 95%;
     margin-left: auto;
     margin-right: auto;

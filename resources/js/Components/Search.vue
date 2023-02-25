@@ -16,45 +16,17 @@
                 @click:append-inner="onClick"
             ></v-text-field>
         </v-card-text>
-        <v-carousel
-            height="100"
-            hide-delimiters
-            progress="primary"
-            show-arrows="hover"
-        >
-            <v-carousel-item
-                v-for="(slide, i) in slides"
-                :key="i"
-            >
-                <v-sheet
-                    height="100%"
-                >
-                    <div class="d-flex fill-height justify-center align-center">
-                        <div class="text-h6">
-                            {{ slide }} Slide
-                        </div>
-                    </div>
-                </v-sheet>
-            </v-carousel-item>
-        </v-carousel>
+        <Slider/>
     </v-card>
 
 </template>
 
 <script>
+import Slider from "@/Components/Slider.vue";
+
 export default {
     name: "Search",
-    data () {
-        return {
-            slides: [
-                'yyyyyyyyyyyyyyyyyyyy',
-                'Second',
-                'Third',
-                'Fourth',
-                'Fifth',
-            ],
-        }
-    },
+    components: {Slider}
 }
 </script>
 

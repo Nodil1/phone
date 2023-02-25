@@ -1,10 +1,11 @@
 <template>
-    <div class="text-center">
+    <div class="text-center ">
         <v-container>
             <v-row justify="center">
                 <v-col cols="8">
                     <v-container class="max-width">
                         <v-pagination
+                            color = "white"
                             v-model="page"
                             class="my-4"
                             :length="15"

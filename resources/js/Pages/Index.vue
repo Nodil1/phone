@@ -4,22 +4,21 @@
                 text="Часто на экране телефона появляются незнакомые номера. Чтобы быстро понять, кто вам звонил, с какого сотового оператора и из какого региона мы разработали данный сервис. Наш справочник содержит абонентов всех мобильных телефонов России."
                 class="main-text"
             >
-        <template v-slot:title>
-                <h1>Звонят с незнакомого номера</h1>
-        </template>
+            <template v-slot:title>
+                    <h1>Звонят с незнакомого номера?</h1>
+            </template>
             </v-alert>
-        <div class="wrapper">
+        <div class="wrapper codes">
             <v-container class="bg-surface-variant">
                 <v-row justify="space-between">
-                    <v-col         sm="5"
-                                   md="7"
+                    <v-col         sm="7"
+                                   md="6"
                                    >
                             <div class="cards">
                                 <Card v-for="item in numbers" :phone="item"/>
                             </div>
                     </v-col>
-                    <v-col         sm="5"
-                                   md="5">
+                    <v-col xs="3" sm="5" md="6">
                         <div class="right-column">
                             <Table
                                 :phones="numbers"
@@ -46,9 +45,10 @@ import Search from "@/Components/Search.vue";
 import Pagination from "@/Components/Pagination.vue";
 import Comment from "@/Components/Comment.vue";
 import Modal from "@/Components/Modal.vue";
+import Code from "@/Pages/Code.vue";
 
 export default defineComponent({
-    components: {Modal, Comment, Pagination, Search, Description, Table, Card, DefaultLayaout},
+    components: {Code, Modal, Comment, Pagination, Search, Description, Table, Card, DefaultLayaout},
     data () {
         return {
             numbers: [
@@ -88,14 +88,16 @@ export default defineComponent({
     padding: 0;
 }
 .main-text{
-    margin: 3%;
+    margin: 1%;
     color: white;
-    background: #4B83C6;
+    background: #0b82b3;
     width: 95%;
     margin-left: auto;
     margin-right: auto;
     padding-left: 16px;
     padding-right: 16px;
-
+}
+.codes{
+    padding: 1%;
 }
 </style>

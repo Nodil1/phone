@@ -4,7 +4,6 @@ import {defineComponent} from "vue";
 import Header from "@/Components/Header.vue";
 import Footer from "@/Components/Footer.vue";
 import Search from "@/Components/Search.vue";
-
 export default defineComponent({
     components: {Search, Footer, Header}
 })
@@ -12,32 +11,35 @@ export default defineComponent({
 <template>
         <v-layout>
             <Header/>
-            <v-main>
+            <v-main :id="top">
                 <div class="wrapper">
                     <div class="search-input">
                         <Search/>
                     </div>
                 </div>
                 <slot/>
-                <v-btn
-                    fixed
-                    dark
-                    fab
-                    top
-                    right
-                    color="pink"
-                >
-                    <v-icon>add</v-icon>
-                </v-btn>
                 <Footer/>
             </v-main>
+            <v-btn
+                href="#top"
+                elevation="15"
+                icon="mdi-arrow-up-circle"
+                color="white"
+                class="fixed_button"
+            ></v-btn>
         </v-layout>
 </template>
 <style>
 .search-input{
-    background-color: #6fb1cc;
+    background-color: #0b82b3;
     padding: 2%;
 }
-
+.fixed_button{
+    position:fixed; /*задаём тип позиции, в нашем случае - фиксированная*/
+    bottom:8%;      /* отступ сверху*/
+    bottom:8%;      /* отступ сверху*/
+    right: 2%;       /* отступ слева*/
+    z-index:999;
+    background: #00acc1/*позиция относительно дальности*/
+}
 </style>
-

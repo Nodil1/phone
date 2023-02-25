@@ -13,11 +13,11 @@
                 <v-container variant="outlined">
                     <v-card-text>
                         <v-text-field
-                            :loading="loading"
-                            density="compact"
                             variant="underlined"
-                            color="white"
+                            color="black"
                             label="Поиск кода"
+                            single-line
+                            hide-details
                             append-inner-icon="mdi-magnify"
                             @click:append-inner="onClick"
                         ></v-text-field>
@@ -26,12 +26,19 @@
                         <v-col
                             v-for="i in codes"
                             cols="20"
-                            sm="4"
+                            sm="2"
+                            md="2"
+                            class="text-center"
                         >
                             <Link :href="'/codes/'+ i.code">
-                                <v-sheet class="ma-2 pa-2" border rounded>
+                                <v-hover
+                                    v-slot="{ isHovering, props }"
+                                >
+                                <v-sheet class="ma-2 pa-2" border rounded :elevation="isHovering ? 16 : 2"
+                                         :class="{'on-hover': isHovering }" v-bind="props">
                                     КОД: {{i.code}}
                                 </v-sheet>
+                                </v-hover>
                             </Link>
                         </v-col>
                     </v-row>
@@ -181,9 +188,9 @@ export default  {
     padding: 3%;
 }
 .main-text{
-    margin: 3%;
+    margin: 1%;
     color: white;
-    background: #4B83C6;
+    background: #0b82b3;
     width: 95%;
     margin-left: auto;
     margin-right: auto;
