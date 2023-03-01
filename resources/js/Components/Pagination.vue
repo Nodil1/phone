@@ -1,20 +1,22 @@
 <template>
-    <div class="text-center paginator">
-        <v-icon class="page-item left-arrow" icon="mdi-chevron-left" @click="inc"></v-icon>
-        <v-icon class="page-item right-arrow" icon="mdi-chevron-right" @click="dec"></v-icon>
-        <v-container class="paginator hidden-overflow">
-            <div class="d-flex" :style="{ 'transform': `translateX(${translateXValue}px)` }">
-                <div v-for="i in 100" :key="i"
-                >
-                    <div class="margin-right page-item"
-                         :class="{'selected-page': i === page}"
-                         @click="page=i"
+    <div class="pagination">
+        <div class="text-center paginator">
+            <v-icon class="page-item left-arrow" icon="mdi-chevron-left" @click="inc"></v-icon>
+            <v-icon class="page-item right-arrow" icon="mdi-chevron-right" @click="dec"></v-icon>
+            <v-container class="paginator hidden-overflow">
+                <div class="d-flex" :style="{ 'transform': `translateX(${translateXValue}px)` }">
+                    <div v-for="i in 100" :key="i"
                     >
-                        <p>{{ i }}</p>
+                        <div class="margin-right page-item"
+                             :class="{'selected-page': i === page}"
+                             @click="page=i"
+                        >
+                            <p>{{ i }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </v-container>
+            </v-container>
+        </div>
     </div>
 </template>
 
@@ -28,7 +30,7 @@ export default {
     components: {Link},
     data() {
         return {
-            translateXValue: -(this.currentPage * 60) +120,
+            translateXValue: -(this.currentPage * 60) + 120,
             page: this.currentPage
         }
     },
@@ -53,7 +55,7 @@ export default {
     },
     watch: {
         page(newVal, oldVal) {
-             router.get('/page/' + newVal)
+            router.get('/page/' + newVal)
         }
     }
 }
@@ -67,12 +69,12 @@ export default {
 
 .left-arrow {
     position: absolute;
-    left: 50px;
+    left: -10px;
 }
 
 .right-arrow {
     position: absolute;
-    right: 50px;
+    right: -10px;
 }
 
 .page-item {
@@ -97,5 +99,8 @@ export default {
 
 .selected-page {
     background-color: #0a739e;
+}
+.pagination {
+    margin: 0 50px;
 }
 </style>

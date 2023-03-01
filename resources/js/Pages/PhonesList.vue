@@ -6,22 +6,23 @@
             </template>
             <template v-slot:text>
                 <div class="d-flex flex-column">
-                    <p>Вам поступил звонок с незнакомого номера? Воспользуйтесь наши справочником телефонных номеров.
-                        На нашем сайте вы можете узнать область, оператора телефонного номера, а также прочитать отзывы других людей</p>
+                    <p>Вам поступил звонок с незнакомого номера? Воспользуйтесь нашим справочником телефонных номеров.
+                        На нашем сайте вы можете узнать область, оператора телефонного номера, а также прочитать отзывы
+                        других людей.</p>
                 </div>
             </template>
         </v-alert>
         <v-container class="blue-bg full-container wrapper">
             <v-row>
                 <v-col
-                    cols="4"
+                    cols="12"
+                    md="4"
                     v-for="i in propNumbers"
                 >
                     <Card :phone="i"></Card>
                 </v-col>
             </v-row>
-            <Pagination :current-page="currentPage" :page-count="pageCount"/>
-
+                <Pagination :current-page="currentPage" :page-count="pageCount"/>
         </v-container>
     </DefaultLayaout>
 </template>

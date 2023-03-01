@@ -29,7 +29,10 @@ class PhoneController extends Controller
 
     public function numberPage(string $number)
     {
-        return Inertia::render('Number', ['phone' => PhoneDTO::fromModel(Phone::wherePhone($number)->first())]);
+        $phoneModel = Cache::remember("phoneModelNumber-$number", 1600, function () use ($number){
+            return Phone::wherePhone($number)->first();
+        });
+        return Inertia::render('Number', ['phone' => PhoneDTO::fromModel($phoneModel)]);
     }
 
     public function phoneList(int $page)

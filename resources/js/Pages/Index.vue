@@ -1,4 +1,9 @@
 <template>
+    <Head>
+        <title>Чей номер? Узнай кто тебе звонил.</title>
+        <meta name="keyword" :content="keywords">
+        <meta name="description" content="Позвонили с незнакомого номера? Мы поможем найти информацию о любом незнакомом номере. У нас вы можете получить информацию об операторе, регионе телефонного номера.">
+    </Head>
     <DefaultLayaout>
         <v-alert
             text="Часто на экране телефона появляются незнакомые номера. Чтобы быстро понять, кто вам звонил, с какого сотового оператора и из какого региона мы разработали данный сервис. Наш справочник содержит абонентов всех мобильных телефонов России."
@@ -46,12 +51,20 @@ import Pagination from "@/Components/Pagination.vue";
 import Comment from "@/Components/Comment.vue";
 import Modal from "@/Components/Modal.vue";
 import Code from "@/Pages/Code.vue";
+import { Head } from '@inertiajs/vue3'
 
 export default defineComponent({
-    components: {Code, Modal, Comment, Pagination, Search, Description, Table, Card, DefaultLayaout},
+    components: {Code, Modal, Comment, Pagination, Search, Description, Table, Card, DefaultLayaout, Head},
     props: ['propNumbers', 'lastComments', 'pageCount'],
     mounted() {
         console.log(this.propNumbers);
+    },
+    computed: {
+        keywords(){
+            console.log("Keyword")
+            console.log(this.propNumbers.map((x) => x.number))
+            return this.propNumbers.map((x) => x.number).join(",")
+        }
     },
     data() {
         return {

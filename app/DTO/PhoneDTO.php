@@ -32,6 +32,8 @@ class PhoneDTO
 
     public static function fromModel(Phone $model): static{
         $phoneId = $model->id;
+        $phone = $model->phone;
+        Cache::put("phoneModelNumber-$phoneId", $phone, 1800);
         return Cache::rememberForever("phoneDTO-$phoneId", function () use ($model){
             return new static(
                 $model->phone,

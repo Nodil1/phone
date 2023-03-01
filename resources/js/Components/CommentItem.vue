@@ -18,7 +18,6 @@
                     </Link>
                 </template>
                 <v-card-subtitle>
-                    МЕТКА НОМЕРА: {{ value.type }}
                 </v-card-subtitle>
                 <v-card-text>
                     {{ value.text }}
@@ -26,14 +25,14 @@
 
                 <v-card-actions>
                     <v-spacer></v-spacer>
-                    1
+                    0
                     <v-btn
                         icon
                         color="success"
                     >
                         <v-icon>mdi-thumb-up</v-icon>
                     </v-btn>
-                    43
+                    0
                     <v-btn
                         icon
                         color="error"

@@ -37,7 +37,12 @@ export default {
             >
                 <v-toolbar>
                     <v-toolbar-title>
-                        <v-btn href="/" ><v-icon>mdi-card-account-phone-outline</v-icon>NOMERA.COM</v-btn>
+                        <Link href="/">
+                            <v-btn >
+                                <v-icon class="margin-right" >mdi-card-account-phone-outline</v-icon>
+                                <p>cheynomerok.ru</p>
+                            </v-btn>
+                        </Link>
                     </v-toolbar-title>
 
 
@@ -48,7 +53,7 @@ export default {
                 >
                 </v-btn>
                     <v-toolbar-items v-for="item in items" :key="item" class="hidden-sm-and-down">
-                        <v-btn :href="item.link" flat>{{ item.text }}</v-btn>
+                        <Link :href="item.link"><v-btn flat>{{ item.text }}</v-btn></Link>
                     </v-toolbar-items>
                 </v-toolbar>
             </v-app-bar>
