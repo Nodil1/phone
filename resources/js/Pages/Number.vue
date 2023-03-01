@@ -88,7 +88,6 @@ import Similar from "@/Components/Similar.vue";
 import BarChart from "@/Components/BarChart.vue";
 import CommentItem from "@/Components/CommentItem.vue";
 import {Head} from '@inertiajs/vue3'
-import login from "../../../vendor/laravel/breeze/stubs/inertia-vue/resources/js/Pages/Auth/Login.vue";
 
 export default {
     name: "Number",
