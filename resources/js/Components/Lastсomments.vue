@@ -5,7 +5,7 @@
                 border
             >
                 <template v-slot:append>
-                    <v-icon color="green"> mdi-circle </v-icon>
+                    <v-icon color="green"> mdi-circle</v-icon>
                 </template>
                 <template v-slot:prepend class="title">
                     <v-card-title class="font-weight-bold">
@@ -43,24 +43,25 @@
         </v-col>
     </v-row>
 
-    </template>
+</template>
 
 <script>
 export default {
     name: "Lastcomments",
     data: () => ({
-            show: false,
-        }),
+        show: false,
+    }),
     props: ['value']
 
 }
 </script>
 
 <style scoped>
-.lastcom{
+.lastcom {
     padding: 0.5rem 0.5rem;
 }
-.title{
+
+.title {
     background: #00bfa5;
 }
 

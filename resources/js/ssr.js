@@ -7,19 +7,26 @@ import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
+import './bootstrap';
+import '../css/app.css';
+import 'vuetify/styles'
+
+
 
 
 const appName = 'Laravel';
 
 const vuetify = createVuetify({
     ssr: true,
+    components,
+    directives,
 })
 
 createServer((page) =>
     createInertiaApp({
         page,
         render: renderToString,
-        title: (title) => `${title} - ${appName}`,
+        title: (title) => `${title}`,
         resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
         setup({ App, props, plugin }) {
             return createSSRApp({ render: () => h(App, props) })

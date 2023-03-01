@@ -2,20 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
+html {
     box-sizing: border-box;
 }
-*,*::before,*::after{
+
+:root {
+    --trans-blue: #0b82b317;
+    --main-blue: #0b82b3;
+}
+.blue-bg{
+    background-color: var(--main-blue);
+}
+*, *::before, *::after {
     box-sizing: inherit;
 
 }
-.v-autocomplete .v-field .v-field__input>input{
+
+.v-autocomplete .v-field .v-field__input > input {
     background: inherit;
 }
-.codes{
+
+.codes {
     padding: 3%;
 }
-.main-text{
+
+.main-text {
     margin: 1%;
     color: white;
     background: #0b82b3;
@@ -26,7 +37,8 @@ html{
     padding-right: 16px;
 
 }
-.search{
+
+.search {
     min-height: 200px;
 
 }
@@ -43,23 +55,51 @@ html{
     background: #0b82b3;
     border-radius: 5px;
 }
-.ttle-lst{
+
+.ttle-lst {
     padding: 2% 0 2% 0;
     color: white;
 }
-.v-card{
+
+.v-card {
     z-index: 10;
 }
-.v-toolbar__content{
+
+.v-toolbar__content {
     background: #0d2f58;
     color: white;
 }
 
-.v-navigation-drawer__content{
+.v-navigation-drawer__content {
     color: white;
 }
 
-.info-ttl{
+.info-ttl {
     color: white;
     padding: 5% 0 5% 0;
+}
+
+.margin-right {
+    margin-right: 10px;
+}
+
+.v-field__field {
+    background-color: var(--trans-blue) !important;
+}
+.white-text {
+    color: white;
+}
+.bold-text {
+    font-weight: bold;
+}
+.hidden-overflow{
+    overflow: hidden;
+}
+.dots-overflow{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.full-container .v-container {
+    max-width: 95%!important;
 }

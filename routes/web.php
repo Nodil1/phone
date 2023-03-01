@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PhoneController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -26,12 +27,10 @@ n
 */
 
 
-Route::get('/', function () {
-    return Inertia::render('Index');
-});
-Route::get('/number/{number}', function (string $number) {
-    return Inertia::render('Number',['number' => $number]);
-});
+Route::get('/', [PhoneController::class, "main"]);
+Route::get('/number/{number}', [PhoneController::class, "numberPage"]);
+Route::get('/page/{page}', [PhoneController::class, "phoneList"]);
+
 Route::get('/codes/{code}', function (string $code) {
     return Inertia::render('Code',['code' => $code]);
 });

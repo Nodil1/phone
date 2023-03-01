@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
+import vuetify from 'vite-plugin-vuetify';
+
 export default defineConfig({
     ssr: {
-        noExternal: ['@vuelidate/core'],
+        noExternal: ['@vuelidate/core', 'vuetify'],
     },
     plugins: [
         laravel({
@@ -19,6 +21,8 @@ export default defineConfig({
                 },
             },
         }),
+        vuetify(),
+
     ],
 
 });

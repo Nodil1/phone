@@ -12,7 +12,6 @@
                 append-inner-icon="mdi-magnify"
                 required
                 hide-details
-                @click:append-inner="onClick"
             ></v-text-field>
         </v-card-text>
         <Slider/>

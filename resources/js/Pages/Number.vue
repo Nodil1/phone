@@ -1,52 +1,62 @@
 <template>
     <DefaultLayaout>
+        <Head>
+            <title>+7{{ phone.number }} - кто мне звонил?</title>
+            <meta name="description" :content="`Кто звонил с номера +7${phone.number}? По нашей информации номер 7${phone.number }
+            принадлежит оператору ${phone.operator}. Номер зарегистрирован в ${phone.region}` " />
+            <meta name="Keywords" :content="`Кто звонил, чей номер +7${phone.number}, оператор +7${phone.number}, город +7${phone.number}, регион +7${phone.number}`">
+
+        </Head>
         <v-alert class="wrapper">
             <template v-slot:title>
-                <h1>Кто звонил с 8{{numbers[0].number}} ?</h1>
+                <h1>Кто звонил с 8{{ phone.number }} ?</h1>
             </template>
             <template v-slot:text>
                 <div class="d-flex flex-column">
-                <h3>Кто звонил c номера +7{{numbers[0].number}}</h3><p>или +7{{numbers[0].number}} ? Узнайте информацию по звонкам с номера телефона +7{{numbers[0].number}}</p>
+                    <h2>Кто звонил c номера +7{{ phone.number }}</h2>
+                    <p>Или 8{{ phone.number }}? Узнайте информацию по звонкам с номера телефона +7{{ phone.number }}.</p>
+                    <p v-if="phone.operator !== ''">По нашей информации номер <b>7{{ phone.number }}</b> принадлежит оператору <b>{{ phone.operator }}</b>.
+                        Номер зарегистрирован в <b>{{phone.region}}</b>.</p>
                 </div>
             </template>
         </v-alert>
         <div class="wrapper number">
             <v-container class="mb-1">
                 <v-row justify="space-between" class="mb-6">
-                    <v-col         sm="7"
-                                   md="7"
+                    <v-col sm="7"
+                           md="7"
                     >
                         <div class="main-info">
                             <v-card class="mb-5 text-h6">
                                 <v-card-text class="text-h6">
-                                    <h3>Информация о номере: 8{{numbers[0].number}}</h3>
+                                    <h3>Информация о номере: 8{{ phone.number }}</h3>
                                 </v-card-text>
                             </v-card>
-                            <Info :number="numbers"/>
+                            <Info :number="phone"/>
                         </div>
-                        <BarChart :chartdata="chartData" :options="chartOptions"/>
                         <v-alert class="info-ttl" variant="text">
                             <template v-slot:title>
-                                <h2>Отзывы о номере +7{{numbers[0].number}}</h2>
+                                <h2>Отзывы о номере +7{{ phone.number }}</h2>
                             </template>
                         </v-alert>
-                        <Commentitem v-for="item in numbers" :value="item"/>
+
+                        <CommentItem v-for="item in phone.comments" :value="item"/>
                         <v-alert class="info-ttl" variant="text"
-                            title="Звонили с этого номера? Вы можете оставить">
+                                 title="Звонили с этого номера? Вы можете оставить">
                             <template v-slot:text>
-                                <h2>Отзыв о номере - +7{{numbers[0].number}}</h2>
+                                <p>Отзыв о номере - +7{{ phone.number }}</p>
                             </template>
                         </v-alert>
-                        <v-card border class="info">
-                            <Comment/>
-                        </v-card>
 
                         <Similar/>
                     </v-col>
-                    <v-col         sm="5"
-                                   md="5">
+                    <v-col sm="5"
+                           md="5">
+                        <v-card border class="info">
+                            <Comment/>
+                        </v-card>
                         <div class="cards">
-                            <Lastcomments v-for="item in numbers" :value="item"/>
+
                         </div>
                     </v-col>
                 </v-row>
@@ -61,83 +71,51 @@ import DefaultLayaout from "@/Layouts/DefaultLayaout.vue";
 import parsePhoneNumber from 'libphonenumber-js'
 import Info from "@/Components/Info.vue"
 import Comment from "@/Components/Comment.vue";
-import Lastcomments from "@/Components/Lastcomments.vue";
+import Lastcomments from "@/Components/Lastсomments.vue";
 import Similar from "@/Components/Similar.vue";
-import Commentitem from "@/Components/Commentitem.vue";
 import BarChart from "@/Components/BarChart.vue";
-const phoneNumber = parsePhoneNumber('+79045986298')
-console.log(phoneNumber.formatInternational())
-
+import CommentItem from "@/Components/CommentItem.vue";
+import { Head } from '@inertiajs/vue3'
 
 export default {
     name: "Number",
-    components: {BarChart, Commentitem, Similar, Lastcomments, Comment, Info, DefaultLayaout},
-    props:['phone'],
-    data () {
+    components: {Head, CommentItem, BarChart, Similar, Lastcomments, Comment, Info, DefaultLayaout},
+    props: ['phone'],
+    data() {
         return {
-            chartData: {
-                labels: [
-                    'January',
-                    'February',
-                    'March',
-                    'April',
-                    'May',
-                    'June',
-                    'July',
-                    'August',
-                    'September',
-                    'October',
-                    'November',
-                    'December'
-                ],
-                datasets: [
-                    {
-                        label: 'Data One',
-                        data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
-                    }
-                ]
-            },
             options: {
                 responsive: true,
                 maintainAspectRatio: false
             },
-            numbers: [
-                {
-                    number: "8005553535",
-                    type: "Мошенник",
-                    comments: [
-                        {
-                            name: "Diman",
-                            text: "2112 is good. Представляет собой III поколение легковых автомобилей производства ВАЗ. Головной моделью семейства является седан ВАЗ-2110Представляет собой III поколение легковых автомобилей производства ВАЗ. Головной моделью семейства является седан ВАЗ-2110Представляет собой III поколение легковых автомобилей производства ВАЗ. Головной моделью семейства является седан ВАЗ-2110",
-                            date:"01.02.45 17:44"
-                        }
-                    ],
-                    stars: 3.4,
-                    views: 123
-                }]
         }
-
-}}
+    },
+    mounted() {
+        console.log(this.phone)
+    }
+}
 
 </script>
 
 <style scoped>
-.info-ttl{
+.info-ttl {
     color: white;
     padding: 5% 0 5% 0;
 }
-.number{
+
+.number {
     padding: 0;
 }
-.info-ttl-first{
+
+.info-ttl-first {
     color: white;
     padding: 0% 0 5%;
     font-size: larger;
 
 }
-.wrapper{
+
+.wrapper {
     background: rgb(11, 130, 179);
-    color:white;
+    color: white;
 
 }
 

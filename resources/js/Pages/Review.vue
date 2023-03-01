@@ -6,7 +6,7 @@
 
 <script>
 import DefaultLayaout from "@/Layouts/DefaultLayaout.vue";
-import Commentitem from "@/Components/Commentitem.vue";
+import Commentitem from "@/Components/CommentItem.vue";
 
 export default {
     name: "Review",

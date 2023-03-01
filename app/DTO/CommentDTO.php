@@ -5,14 +5,15 @@ namespace App\DTO;
 use App\Models\Comment;
 use App\Models\Phone;
 use Illuminate\Support\Collection;
+use mysql_xdevapi\Exception;
 
 class CommentDTO
 {
     public function __construct(
-        public int $id,
+        public int    $id,
         public string $phoneId,
         public string $phone,
-        public string $author,
+        public string $name,
         public string $text,
         public string $date
     )
@@ -37,7 +38,7 @@ class CommentDTO
      */
     public static function fromCollection(Collection $collection): Collection
     {
-        return  $collection->map(function (Comment $el){
+        return $collection->map(function (Comment $el) {
             return self::fromModel($el);
         });
     }

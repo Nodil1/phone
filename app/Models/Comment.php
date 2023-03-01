@@ -31,4 +31,9 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     use HasFactory;
+
+    public function phone(): Phone
+    {
+        return Phone::find($this->id_phone);
+    }
 }

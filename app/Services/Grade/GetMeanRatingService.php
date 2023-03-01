@@ -11,10 +11,15 @@ class GetMeanRatingService
     public static function execute(Phone $phone): int
     {
         $grades = $phone->grades();
-        $sum = 0;
-        foreach ($grades as $grade){
-            $sum += $grade->value;
+        if ($grades->count() > 0) {
+            $sum = 0;
+            foreach ($grades as $grade) {
+                $sum += $grade->value;
+            }
+            return (int)($sum / $grades->count());
+        } else{
+            return 0;
         }
-        return (int)($sum / $grades->count());
+
     }
 }
