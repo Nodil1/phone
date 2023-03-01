@@ -19,7 +19,7 @@ export default defineComponent({
                     </div>
                 </div>
                 <slot/>
-                <Footer/>
+                <Footer class="margin-top"/>
             </v-main>
             <v-btn
                 href="#top"
