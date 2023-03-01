@@ -2,13 +2,13 @@
     <DefaultLayaout>
         <v-alert
             :text="'Мы собрали всю доступную информацию по телефонному коду '+code"
-            class="main-text"
+            class="main-text default-container margin-top"
         >
             <template v-slot:title>
                 <h1>Телефонный код: {{code}}</h1>
             </template>
         </v-alert>
-        <div class="wrapper codes">
+        <div class="wrapper default-container margin-top">
             <v-card>
                 <v-table>
                     <thead>

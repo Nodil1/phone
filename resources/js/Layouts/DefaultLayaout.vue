@@ -32,9 +32,6 @@ export default defineComponent({
         </v-layout>
 </template>
 <style>
-.search-input{
-    background-color: #0b82b3;
-}
 .fixed_button{
     position:fixed; /*задаём тип позиции, в нашем случае - фиксированная*/
     bottom:8%;      /* отступ сверху*/

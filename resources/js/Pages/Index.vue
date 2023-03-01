@@ -105,16 +105,6 @@ export default defineComponent({
     padding: 0;
 }
 
-.main-text {
-    margin: 1%;
-    color: white;
-    background: #0b82b3;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 16px;
-    padding-right: 16px;
-}
 
 .codes {
     padding: 1%;

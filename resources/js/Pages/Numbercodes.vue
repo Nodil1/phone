@@ -2,13 +2,13 @@
     <DefaultLayaout>
             <v-alert
                 text="Для вашего удобства у нас представлен справочник телфонных кодовмобильных и стационарных номеров телефона."
-                class="main-text"
+                class="main-text default-container margin-top"
             >
                 <template v-slot:title>
                     <h1>Cправочник телефонных кодов:</h1>
                 </template>
             </v-alert>
-        <div class="wrapper codes">
+        <div class="wrapper default-container margin-top">
             <v-card border class="info">
                 <v-container variant="outlined">
                     <v-card-text>
@@ -187,16 +187,6 @@ export default  {
 .codes{
     padding: 3%;
 }
-.main-text{
-    margin: 1%;
-    color: white;
-    background: #0b82b3;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 16px;
-    padding-right: 16px;
 
-}
 
 </style>
