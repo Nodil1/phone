@@ -36,7 +36,10 @@ class PhoneController extends Controller
     {
         return Inertia::render('PhonesList',
             [
-                'propNumbers' => GetPhoneChunkService::execute(10, $page),
+                'propNumbers' => GetPhoneChunkService::execute(50, $page),
+                'currentPage' => $page,
+                'pageCount' => GetPhonePageCountService::execute()
+
             ]);
     }
 }

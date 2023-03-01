@@ -11,7 +11,7 @@ html {
     --main-blue: #0b82b3;
 }
 .blue-bg{
-    background-color: var(--main-blue);
+    background-color: var(--main-blue)!important;
 }
 *, *::before, *::after {
     box-sizing: inherit;
@@ -100,6 +100,6 @@ html {
     white-space: nowrap;
     overflow: hidden;
 }
-.full-container .v-container {
+.full-container {
     max-width: 95%!important;
 }

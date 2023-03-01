@@ -28,7 +28,7 @@ export default {
     components: {Link},
     data() {
         return {
-            translateXValue: 0,
+            translateXValue: -(this.currentPage * 60) +120,
             page: this.currentPage
         }
     },
@@ -67,12 +67,12 @@ export default {
 
 .left-arrow {
     position: absolute;
-    left: 100px;
+    left: 50px;
 }
 
 .right-arrow {
     position: absolute;
-    right: 100px;
+    right: 50px;
 }
 
 .page-item {
