@@ -1,6 +1,6 @@
 <template>
     <DefaultLayaout>
-        <v-alert class="wrapper blue-bg">
+        <v-alert class="main-text default-container margin-top">
             <template v-slot:title>
                 <h1>Кто мне звонил с незнакомого номера ?</h1>
             </template>
@@ -12,7 +12,7 @@
                 </div>
             </template>
         </v-alert>
-        <v-container class="blue-bg full-container wrapper">
+        <v-container class="wrapper default-container margin-top">
             <v-row>
                 <v-col
                     cols="12"
