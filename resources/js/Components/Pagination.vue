@@ -7,12 +7,14 @@
                 <div class="d-flex" :style="{ 'transform': `translateX(${translateXValue}px)` }">
                     <div v-for="i in 100" :key="i"
                     >
+                        <Link :href="'/page/' + i">
                         <div class="margin-right page-item"
                              :class="{'selected-page': i === page}"
                              @click="page=i"
                         >
                             <p>{{ i }}</p>
                         </div>
+                        </Link>
                     </div>
                 </div>
             </v-container>
@@ -55,7 +57,7 @@ export default {
     },
     watch: {
         page(newVal, oldVal) {
-            router.get('/page/' + newVal)
+            //router.get('/page/' + newVal)
         }
     }
 }
