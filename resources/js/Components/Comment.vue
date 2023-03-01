@@ -1,7 +1,8 @@
 <template>
     <form>
         <slot/>
-        <v-textarea label="Комментарий"
+        <v-textarea
+                    label="Комментарий"
                     class="ma-2"
                     v-model="state.comment"
                     :error-messages="v$.name.$errors.map(e => e.$message)"

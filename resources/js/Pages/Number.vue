@@ -33,6 +33,12 @@
                                 </v-card-text>
                             </v-card>
                             <Info :number="phone"/>
+                            <v-btn
+                                color="primary"
+                                href="#comment"
+                            >
+                                Оставить комментарий
+                            </v-btn>
                         </div>
                         <v-alert class="info-ttl" variant="text">
                             <template v-slot:title>
@@ -41,23 +47,19 @@
                         </v-alert>
 
                         <CommentItem v-for="item in phone.comments" :value="item"/>
-                        <v-alert class="info-ttl" variant="text"
-                                 title="Звонили с этого номера? Вы можете оставить">
-                            <template v-slot:text>
-                                <p>Отзыв о номере - +7{{ phone.number }}</p>
-                            </template>
-                        </v-alert>
-
                         <Similar/>
                     </v-col>
                     <v-col sm="5"
                            md="5">
+                        <v-card class="mb-5 text-h6">
+                        <v-card-text class="text-h6 pa-2">
+                            <p class="ma-2">Звонили с этого номера?</p>
+                            <p class="ma-2">Вы можете оставить отзыв о номере +7{{ phone.number }}</p>
+                        </v-card-text>
+                        </v-card>
                         <v-card border class="info">
                             <Comment/>
                         </v-card>
-                        <div class="cards">
-
-                        </div>
                     </v-col>
                 </v-row>
             </v-container>
