@@ -15,9 +15,8 @@ html {
     padding: 10px;
     width: 100%!important;
     margin: 0!important;
-    box-shadow: 0 0 7px 1px var(--main-blue)!important;
-    border-radius: 5px;
-
+    box-shadow: 0 0 7px -2px #00253D!important;
+    background: #00253D ;
 }
 .margin-top {
     margin-top: 15px!important;
@@ -30,11 +29,14 @@ html {
     padding-right: 40px!important;
 }
 :root {
-    --trans-blue: #0b82b317;
-    --main-blue: #0d2f58;
+    --trans-blue: rgba(0, 37, 61, 0.08);
+    --main-blue: #008394;
 }
 .blue-bg{
     background-color: var(--main-blue)!important;
+}
+.v-main{
+    background: #008394;
 }
 
 *, *::before, *::after {
@@ -48,37 +50,24 @@ html {
 .codes {
     padding: 3%;
 }
-.text-center{
-    text-align: center;
-}
-.bottom-border{
-    border-bottom: 1px solid #c7c7c7;
-}
-.main-text {
-    margin: 1%;
-    color: white;
-    background: var(--main-blue)!important;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 16px;
-    padding-right: 16px;
-}
+
 
 .search {
     min-height: 200px;
 }
 
 .wrapper {
-    box-shadow: 0 0 7px 1px #393939;
-
     padding-left: 16px;
     padding-right: 16px;
-
     background: var(--main-blue);
     border-radius: 5px;
 }
-
+.white-text{
+    color: white;
+}
+.white-text p, h1, h2{
+    color: white;
+}
 .ttle-lst {
     padding: 2% 0 2% 0;
     color: white;
@@ -125,4 +114,7 @@ html {
 }
 .full-container {
     max-width: 95%!important;
+}
+.main-text{
+    background: #00253D ;
 }
