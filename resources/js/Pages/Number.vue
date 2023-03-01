@@ -7,7 +7,7 @@
             <meta name="Keywords" :content="`Кто звонил, чей номер +7${phone.number}, оператор +7${phone.number}, город +7${phone.number}, регион +7${phone.number}`">
 
         </Head>
-        <v-alert class="wrapper">
+        <v-alert class="main-text default-container margin-top">
             <template v-slot:title>
                 <h1>Кто звонил с 8{{ phone.number }} ?</h1>
             </template>
@@ -20,7 +20,8 @@
                 </div>
             </template>
         </v-alert>
-        <div class="wrapper number">
+
+        <div class="wrapper default-container margin-top">
             <v-container class="mb-1">
                 <v-row justify="space-between" class="mb-6">
                     <v-col sm="7"
@@ -115,11 +116,6 @@ export default {
 
 }
 
-.wrapper {
-    background: rgb(11, 130, 179);
-    color: white;
-
-}
 
 </style>
 

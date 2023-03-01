@@ -15,7 +15,8 @@ html {
     padding: 10px;
     width: 100%!important;
     margin: 0!important;
-    box-shadow: 0 0 7px 1px var(--main-blue)!important;
+    box-shadow: 0 0 7px 1px #00253D!important;
+    background: #00253D ;
 }
 .margin-top {
     margin-top: 15px!important;
@@ -28,11 +29,14 @@ html {
     padding-right: 40px!important;
 }
 :root {
-    --trans-blue: #0b82b317;
-    --main-blue: #0d2f58;
+    --trans-blue: #00253D;
+    --main-blue: #008394;
 }
 .blue-bg{
     background-color: var(--main-blue)!important;
+}
+.v-main{
+    background: #008394;
 }
 
 *, *::before, *::after {
@@ -47,16 +51,6 @@ html {
     padding: 3%;
 }
 
-.main-text {
-    margin: 1%;
-    color: white;
-    background: var(--main-blue)!important;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 16px;
-    padding-right: 16px;
-}
 
 .search {
     min-height: 200px;
@@ -64,10 +58,8 @@ html {
 
 .wrapper {
     box-shadow: 0 0 7px 1px #393939;
-
     padding-left: 16px;
     padding-right: 16px;
-
     background: var(--main-blue);
     border-radius: 5px;
 }
@@ -118,4 +110,7 @@ html {
 }
 .full-container {
     max-width: 95%!important;
+}
+.main-text{
+    background: #00253D ;
 }
