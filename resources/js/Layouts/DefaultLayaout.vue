@@ -13,7 +13,7 @@ export default defineComponent({
         <v-layout>
             <Header/>
             <v-main :id="top">
-                <div class="wrapper">
+                <div class="wrapper default-container margin-top">
                     <div class="search-input">
                         <Search/>
                     </div>
@@ -34,7 +34,6 @@ export default defineComponent({
 <style>
 .search-input{
     background-color: #0b82b3;
-    padding: 2%;
 }
 .fixed_button{
     position:fixed; /*задаём тип позиции, в нашем случае - фиксированная*/

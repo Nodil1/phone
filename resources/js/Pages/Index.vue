@@ -7,25 +7,24 @@
     <DefaultLayaout>
         <v-alert
             text="Часто на экране телефона появляются незнакомые номера. Чтобы быстро понять, кто вам звонил, с какого сотового оператора и из какого региона мы разработали данный сервис. Наш справочник содержит абонентов всех мобильных телефонов России."
-            class="main-text"
+            class="main-text default-container margin-top"
         >
             <template v-slot:title>
                 <h1>Звонят с незнакомого номера?</h1>
             </template>
         </v-alert>
-        <div class="wrapper codes">
-            <v-container class="bg-surface-variant">
+        <div class="wrapper default-container margin-top">
                 <v-row justify="space-between">
                     <v-col sm="7"
                            md="6"
                     >
-                        <p class="white-text bold-text text-h5">Популярные номера</p>
+                        <p class="white-text bold-text text-h5 margin-bottom">Популярные номера</p>
                         <div class="cards">
                             <Card v-for="item in propNumbers" :phone="item"/>
                         </div>
                     </v-col>
                     <v-col xs="3" sm="5" md="6">
-                        <p class="white-text bold-text text-h5">Последние активные</p>
+                        <p class="white-text bold-text text-h5 margin-bottom">Последние активные</p>
 
                         <div class="right-column">
                             <Table
@@ -34,7 +33,6 @@
                         </div>
                     </v-col>
                 </v-row>
-            </v-container>
             <Pagination :page-count="pageCount" :current-page="1"/>
         </div>
     </DefaultLayaout>

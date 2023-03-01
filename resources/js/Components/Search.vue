@@ -32,4 +32,13 @@ export default {
 .descriptoin{
     border-radius: 0;
 }
+>>> .v-field__append-inner{
+    padding: 10px;
+}
+>>> .v-field__overlay {
+    width: 99%;
+}
+>>> .v-field__outline {
+    display:none;
+}
 </style>

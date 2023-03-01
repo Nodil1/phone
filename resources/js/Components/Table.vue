@@ -1,29 +1,15 @@
 <template>
     <v-card border>
-    <v-table>
-        <thead>
-        <tr>
-            <th class="text-left">
-                Номер
-            </th>
-            <th class="text-left">
-                Просмотров
-            </th>
-            <th class="text-left">
-                Оценка
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr
-            v-for="item in phones"
-        >
-            <td>8{{ item.number }}</td>
-            <td>{{ item.views }} шт</td>
-            <td>{{ item.stars }}</td>
-        </tr>
-        </tbody>
-    </v-table>
+        <v-row>
+            <v-col><p>Номер</p></v-col>
+            <v-col><p>Просмотров</p></v-col>
+            <v-col><p>Оценка</p></v-col>
+        </v-row>
+        <v-row v-for="item in phones">
+            <v-col>8{{ item.number }}</v-col>
+            <v-col>{{ item.views }} шт</v-col>
+            <v-col>{{ item.stars }}</v-col>
+        </v-row>
     </v-card>
 </template>
 
@@ -35,6 +21,9 @@ export default {
 </script>
 
 <style scoped>
+
+td{
+}
 .sees{
     text-align: center;
 }

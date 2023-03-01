@@ -27,16 +27,13 @@ export default {
 </script>
 
 <template>
-    <v-card
-        class="mx-auto"
-        max-width="50%"
-    >
+
             <v-app-bar
                 color="white"
                 density="compact"
             >
                 <v-toolbar>
-                    <v-toolbar-title>
+                    <v-toolbar-title class="padding">
                         <Link href="/">
                             <v-btn >
                                 <v-icon class="margin-right" >mdi-card-account-phone-outline</v-icon>
@@ -52,7 +49,8 @@ export default {
                     icon = "mdi mdi-menu"
                 >
                 </v-btn>
-                    <v-toolbar-items v-for="item in items" :key="item" class="hidden-sm-and-down">
+                    <v-toolbar-items v-for="(item, idx) in items" :key="item" class="hidden-sm-and-down"
+                                     :class="{'last-padding': idx == items.length - 1}">
                         <Link :href="item.link"><v-btn flat>{{ item.text }}</v-btn></Link>
                     </v-toolbar-items>
                 </v-toolbar>
@@ -75,7 +73,6 @@ export default {
                     </div>
                 </template>
             </v-navigation-drawer>
-    </v-card>
 </template>
 
 <style scoped>
@@ -87,6 +84,8 @@ export default {
     z-index: 1000;
 
 }
-
+.last-padding {
+    padding: 20px;
+}
 </style>
 

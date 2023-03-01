@@ -24,11 +24,11 @@ export default {
     data () {
         return {
             slides: [
-                'Послдение про',
-                'Second',
-                'Third',
-                'Fourth',
-                'Fifth',
+                'Реклама',
+                'Реклама',
+                'Реклама',
+                'Реклама',
+                'Реклама',
             ],
         }
     },
@@ -36,5 +36,7 @@ export default {
 </script>
 
 <style scoped>
-
+>>> .v-card-title{
+    text-align: center;
+}
 </style>
