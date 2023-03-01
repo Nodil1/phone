@@ -1,4 +1,12 @@
 <template>
+
+    <Head>
+        <title>Чей номер? Узнать кто мне звонил.</title>
+        <meta name="keyword" :content="keywords">
+        <meta name="description"
+              content="Позвонили с незнакомого номера? Мы поможем найти информацию о любом незнакомом номере. У нас вы можете получить информацию об операторе, регионе телефонного номера.">
+
+    </Head>
     <DefaultLayaout>
         <v-alert class="main-text default-container margin-top">
             <template v-slot:title>
@@ -39,6 +47,13 @@ export default {
     mounted() {
         console.log("Ya!")
         console.log(this.propNumbers)
+    },
+    computed: {
+        keywords() {
+            console.log("Keyword")
+            console.log(this.propNumbers.map((x) => x.number))
+            return this.propNumbers.map((x) => x.number).join(",")
+        }
     }
 }
 </script>

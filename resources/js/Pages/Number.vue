@@ -30,7 +30,7 @@
             </template>
             <template v-slot:text>
                 <div class="d-flex flex-column">
-                    Номер +7{{ phone.number }} написать по разному, например: {{this.generateNumbers()}}
+                    Номер +7{{ phone.number }} написать по разному, например: {{generateNumbers()}}
                 </div>
             </template>
         </v-alert>
@@ -92,9 +92,7 @@ import {Head} from '@inertiajs/vue3'
 export default {
     name: "Number",
     computed: {
-        login() {
-            return login
-        }
+
     },
     components: {Head, CommentItem, BarChart, Similar, Lastcomments, Comment, Info, DefaultLayaout},
     props: ['phone'],
