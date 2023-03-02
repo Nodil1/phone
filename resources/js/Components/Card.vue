@@ -13,6 +13,9 @@ export default {
             isModalOpen: false
         }
     },
+    mounted() {
+
+    },
     methods: {
         openModal() {
             this.isModalOpen = true
@@ -41,15 +44,15 @@ export default {
                     </v-card-title>
                 </template>
                 <v-card-subtitle class="date">
-                    {{ phone.comments[0].date }}
+                    {{ phone.comments[0] ? phone.comments[0].date : "" }}
                 </v-card-subtitle>
             </v-card-item>
             <v-card-subtitle>
                 Метка: {{ phone.type }}
             </v-card-subtitle>
             <v-card-text class="d-flex align-baseline">
-                <p class="font-weight-bold text-subtitle-2">{{ phone.comments[0].name }}:&nbsp;</p>
-                <p class="dots-overflow">{{ phone.comments[0].text }}</p>
+                <p class="font-weight-bold text-subtitle-2">{{ phone.comments[0] ? phone.comments[0].name : "" }}:&nbsp;</p>
+                <p class="dots-overflow">{{ phone.comments[0] ? phone.comments[0].text : "" }}</p>
             </v-card-text>
         </Link>
         <div class="action">
