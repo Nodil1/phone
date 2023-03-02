@@ -17,7 +17,7 @@ class PhoneController extends Controller
     public function main()
     {
 
-        $arr = Cache::remember('index', 3600, function () {
+        $arr = Cache::remember('index', 600, function () {
             return [
                 'propNumbers' => GetPhoneChunkService::execute(10, 1),
                 'lastComments' => GetLastActiveNumbersService::execute(),
@@ -42,7 +42,6 @@ class PhoneController extends Controller
                 'propNumbers' => GetPhoneChunkService::execute(50, $page),
                 'currentPage' => $page,
                 'pageCount' => GetPhonePageCountService::execute()
-
             ]);
     }
 }

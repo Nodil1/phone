@@ -118,3 +118,10 @@ html {
 .main-text{
     background: #00253D ;
 }
+
+@media (max-width: 801px) {
+    .v-main{
+        padding-left: 10px!important;
+        padding-right: 10px!important;
+    }
+}

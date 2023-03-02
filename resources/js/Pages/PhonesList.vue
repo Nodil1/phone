@@ -39,11 +39,11 @@
 import DefaultLayaout from "@/Layouts/DefaultLayaout.vue";
 import Card from "@/Components/Card.vue";
 import Pagination from "@/Components/Pagination.vue";
-
+import {Head} from '@inertiajs/vue3'
 export default {
     name: "PhonesList",
     props: ['propNumbers', 'currentPage', 'pageCount'],
-    components: {Pagination, Card, DefaultLayaout},
+    components: {Pagination, Card, DefaultLayaout, Head},
     mounted() {
         console.log("Ya!")
         console.log(this.propNumbers)

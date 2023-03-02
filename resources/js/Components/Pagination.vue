@@ -105,4 +105,18 @@ export default {
 .pagination {
     margin: 0 50px;
 }
+@media (max-width: 801px) {
+    .paginator {
+        padding: 0 1px;
+    }
+    .left-arrow {
+        position: absolute;
+        left: -30px;
+    }
+
+    .right-arrow {
+        position: absolute;
+        right: -30px;
+    }
+}
 </style>
